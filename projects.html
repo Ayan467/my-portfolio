@@ -5,6 +5,60 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects — Ayan Samanta</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      background: linear-gradient(160deg, rgba(14,165,233,0.04), rgba(124,58,237,0.03));
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(14,165,233,0.10);
+      border-color: rgba(14,165,233,0.18);
+    }
+    .project-thumb {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      display: block;
+      background: rgba(255,255,255,0.02);
+    }
+    .project-thumb-placeholder {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      background: linear-gradient(135deg, rgba(14,165,233,0.08), rgba(124,58,237,0.08));
+    }
+    .project-body {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-body h3 { margin: 0 0 8px; font-size: 17px; color: #e6eef8; }
+    .project-body p { margin: 0 0 14px; color: var(--muted); font-size: 14px; line-height: 1.6; flex: 1; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+    .tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: rgba(14,165,233,0.10); color: var(--accent); border: 1px solid rgba(14,165,233,0.14); letter-spacing: .4px; }
+    .tag.purple { background: rgba(124,58,237,0.10); color: #a78bfa; border-color: rgba(124,58,237,0.18); }
+    .card-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .card-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 13px; display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(14,165,233,0.18); transition: background .15s, color .15s; }
+    .card-link:hover { background: rgba(14,165,233,0.08); color: #fff; }
+    .card-link.live { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #001; border: none; font-weight: 700; }
+    .card-link.live:hover { opacity: .88; color: #001; }
+    .projects-page h1 { margin-top: 20px; margin-bottom: 6px; }
+    .projects-page .subtitle { color: var(--muted); margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 8px; }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -20,31 +74,78 @@
 
   <main class="container projects-page">
     <h1>Selected Projects</h1>
+    <p class="subtitle">A collection of my best work — from full-stack apps to data dashboards and e-commerce.</p>
 
     <div class="grid">
+
       <article class="project-card">
-        <h3>Task Manager</h3>
-        <p>Full-stack task manager with Node.js, Express, MongoDB and EJS templates. CRUD functionality and modular architecture.</p>
-        <a class="card-link" href="https://github.com/Ayan467/Task-manager" target="_blank" rel="noopener">View on GitHub</a>
+        <img class="project-thumb" src="assets/images/reatail.png" alt="Retail Management App" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="project-thumb-placeholder" style="display:none">🛒</div>
+        <div class="project-body">
+          <h3>Retail Management App</h3>
+          <p>A full-stack retail management system to handle inventory, billing, and product tracking — built for real-world store operations.</p>
+          <div class="tag-row">
+            <span class="tag">Full Stack</span>
+            <span class="tag purple">Node.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+          <div class="card-links">
+            <a class="card-link" href="https://github.com/Ayan467/retail-management-app" target="_blank" rel="noopener">⌥ GitHub</a>
+          </div>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Simon Says Game</h3>
-        <p>Interactive memory game using Vanilla JavaScript with score tracking and responsive UI.</p>
-        <a class="card-link" href="https://github.com/Ayan467/Simon-Says-Game" target="_blank" rel="noopener">View on GitHub</a>
+        <div class="project-thumb-placeholder">☕</div>
+        <div class="project-body">
+          <h3>Todo App — Java</h3>
+          <p>A clean, feature-complete task management app built in Java. Demonstrates OOP principles, data persistence, and a smooth user workflow.</p>
+          <div class="tag-row">
+            <span class="tag">Java</span>
+            <span class="tag purple">OOP</span>
+            <span class="tag">CLI / Desktop</span>
+          </div>
+          <div class="card-links">
+            <a class="card-link" href="https://github.com/Ayan467/todo-app-java" target="_blank" rel="noopener">⌥ GitHub</a>
+          </div>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Chat Bot (Rule-Based)</h3>
-        <p>Client-side keyword-based chatbot with typing animations and a modern responsive interface.</p>
-        <a class="card-link" href="https://github.com/Ayan467/A-Simple-Chat-Bot" target="_blank" rel="noopener">View on GitHub</a>
+        <img class="project-thumb" src="assets/images/excel.png" alt="Sales Dashboard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="project-thumb-placeholder" style="display:none">📊</div>
+        <div class="project-body">
+          <h3>Sales Dashboard — Excel</h3>
+          <p>An interactive Excel-based sales dashboard featuring dynamic charts, KPI summaries, and pivot table analysis for business reporting.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag purple">Data Analysis</span>
+            <span class="tag">Pivot Tables</span>
+          </div>
+          <div class="card-links">
+            <a class="card-link" href="https://github.com/Ayan467/sales-dashboard-excel" target="_blank" rel="noopener">⌥ GitHub</a>
+          </div>
+        </div>
       </article>
 
       <article class="project-card">
-        <h3>Rock Paper Scissors</h3>
-        <p>Classic browser game with score tracking, random computer moves and responsive layout.</p>
-        <a class="card-link" href="https://github.com/Ayan467/Rock-Paper-Scissors" target="_blank" rel="noopener">View on GitHub</a>
+        <img class="project-thumb" src="assets/images/shopify.png" alt="VelourWear Shopify Store" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="project-thumb-placeholder" style="display:none">🛍️</div>
+        <div class="project-body">
+          <h3>VelourWear — Shopify Store</h3>
+          <p>A fully live e-commerce fashion store built on Shopify. Custom theme, product pages, and complete checkout flow — ready for real customers.</p>
+          <div class="tag-row">
+            <span class="tag">Shopify</span>
+            <span class="tag purple">E-Commerce</span>
+            <span class="tag">Live Store</span>
+          </div>
+          <div class="card-links">
+            <a class="card-link live" href="https://velourwear.myshopify.com" target="_blank" rel="noopener">🔗 Live Store</a>
+            <a class="card-link" href="https://github.com/Ayan467/velourwear-shopify-store" target="_blank" rel="noopener">⌥ GitHub</a>
+          </div>
+        </div>
       </article>
+
     </div>
   </main>
 
